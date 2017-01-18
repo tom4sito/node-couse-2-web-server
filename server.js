@@ -26,14 +26,13 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
 	res.render('maintenance.hbs');
-});
+});*/
 
 app.get('/', (req, res) => {
 	res.render('home.hbs', {
 		race: 'saiyan',
-		// currentYear: new Date().getFullYear()
 	});
 });
 
@@ -43,5 +42,12 @@ app.get('/about', (req, res) => {
 		// currentYear: new Date().getFullYear()
 	});
 });
+
+app.get('/projects', (req, res) => {
+	res.render('project.hbs', {
+		about: 'dragon ball project',
+		pageTitle: 'Dragon Ball'
+	})
+})
 
 app.listen(3000);
